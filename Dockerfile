@@ -7,11 +7,10 @@ FROM tomcat:8.0-jre8
 # Copy jasperreports-server-<ver> zip file from resources dir. Build will fail if file not present.
 COPY resources/jasperreports-server*zip /tmp/jasperserver.zip
 
-# får fel
-#RUN apt-get update && apt-get -y upgrade
-
 # the below gives
 # Err http://security.debian.org jessie/updates InRelease
 # Err http://deb.debian.org jessie InRelease
 
-RUN apt-get update && apt-get install -y postgresql-client unzip xmlstarlet
+RUN apt-get -y update
+RUN apt-get -y upgrade
+RUN apt-get install -y postgresql-client unzip xmlstarlet
