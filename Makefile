@@ -12,5 +12,5 @@ init:
 	mv ${ARTIFACT} resources
 
 build:
-	@docker build -t dina/jasper:v0.1 .
-  #docker build --no-cache=true  -t dina/jasper:v0.2 .
+	#@docker build -t dina/jasper:v0.1 .
+  docker build --no-cache=true  -t dina/jasper:v0.2 .
